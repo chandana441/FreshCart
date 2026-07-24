@@ -1,0 +1,34 @@
+.hero img{
+    width: 550px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.category-card img{
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.product-card img{
+    width:180px;
+    height:180px;
+    object-fit:contain;
+}
+
+.hero-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero img{
+    flex:1;
+}
