@@ -1,6 +1,11 @@
+import { useCart } from "../context/CartContext";
+
 function ProductCard({ product }) {
+  const { addToCart } = useCart();
+
   return (
     <div className="product-card">
+
       <img
         src={product.image}
         alt={product.name}
@@ -17,10 +22,15 @@ function ProductCard({ product }) {
           ₹{product.price}
         </p>
 
-        <button className="add-cart-btn">
-          Add to Cart
+        <button
+          className="add-cart-btn"
+          onClick={() => addToCart(product)}
+        >
+          🛒 Add to Cart
         </button>
+
       </div>
+
     </div>
   );
 }
