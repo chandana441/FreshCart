@@ -1,37 +1,23 @@
-import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
-  const { addToCart } = useCart();
-
   return (
-    <div className="product-card">
+    <Link
+      to={`/products/${product.id}`}
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
+      <div className="product-card">
+        <img src={product.image} alt={product.name} />
 
-      <img
-        src={product.image}
-        alt={product.name}
-      />
-
-      <div className="product-info">
         <h3>{product.name}</h3>
 
-        <p className="category">
-          {product.category}
-        </p>
+        <p>{product.category}</p>
 
-        <p className="price">
-          ₹{product.price}
-        </p>
+        <h4>₹ {product.price}</h4>
 
-        <button
-          className="add-cart-btn"
-          onClick={() => addToCart(product)}
-        >
-          🛒 Add to Cart
-        </button>
-
+        <button>Add to Cart</button>
       </div>
-
-    </div>
+    </Link>
   );
 }
 
